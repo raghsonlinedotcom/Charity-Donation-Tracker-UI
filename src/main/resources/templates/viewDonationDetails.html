@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="ISO-8859-1">
+<title>DonationTracker.com</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+	  rel="stylesheet" 
+	  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+	  crossorigin="anonymous">
+
+</head>
+<body bgcolor="cyan">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/donation/all}">Welcome to Donation-Tracker</a>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card" >
+				<h2 class ="text-center"> Donation Details</h2>
+				<div class="row">
+					<div class = "col-lg-3">
+						<a th:href ="@{/donation/all}" class = "btn btn-primary btn-sm mb-3" >Home Page</a>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="form-group" th:if="${donation}">		
+						<div class="form-group"><label>Id</label> : <label th:text="${donation.sl}" /></div> <br/>
+						<div class="form-group"><label>Year</label> : <label th:text="${donation.year}" /></div> <br/>
+						<div class="form-group"><label>Receipt Number</label> : <label th:text="${donation.receiptNumber}" /></div><br/>
+						<div class="form-group"><label>Amount</label> : <label th:text="${donation.amount}" /></div><br/>
+						<div class="form-group"><label>Institution</label> : <label th:text="${donation.institution}" /></div><br/>
+						<div class="form-group"><label>Address</label> : <label th:text="${donation.addr}" /></div> <br/>
+						<div class="form-group"><label>Pan</label> : <label th:text="${donation.pan}" /></div><br/>
+						<div class="form-group"><label>Date</label> : <label th:text="${donation.date}" /></div><br/>
+						<div class="form-group"><label>Time</label> : <label th:text="${donation.time}" /></div><br/>
+				   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
